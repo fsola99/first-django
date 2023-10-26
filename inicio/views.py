@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import CrearPaletaFormulario
 
 # ESTAS DOS YA QUEDARÍAN OBSOLETAS
 #from django.http import HttpResponse
@@ -22,3 +23,22 @@ def paletas(request):
     paleta.save()
     
     return render(request, 'inicio/paletas.html',{paleta:paletas})
+
+def crear_paleta(request):
+    
+    # VERSION HTML
+    
+    # if request.mehtod == 'POST':
+    #     marca = request.POST.get('marca')
+    #     descripcion = request.POST.get('descripcion')
+    #     anio = request.POST.get(anio)
+        
+    #     paleta = Paleta(marca=marca,descripcion=descripcion,anio=anio)
+    #     paleta.save()
+    
+    # VERSION DJANGO FORMS
+    if request.method == 'POST':
+        ...
+
+    formulario = CrearPaletaFormulario()
+    return render(request, 'inicio/crear_paleta.html', {'formulario': formulario})

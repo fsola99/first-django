@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Crear Paleta</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Crear Paleta
+{% endblock h1_header %}
+
+{% block main %}
+
+<!--  VERSION HTML -->
+<!--
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>
+        Marca:
+        <input type="text" name="marca">
+    </p>
+
+    <p>
+        Descripcion:
+        <input type="text" name="description">
+    </p>
+    <p>
+        Año:
+        <input type="text" name="anio">
+    </p>
+    
+
+    <input type="submit" value="Crear">
+
+</form>
+-->
+<!--2) VERSION DJANGO FORMS-->
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{formulario}}
+    <input type="submit" value="Crear">
+
+</form>
+{% endblock main %}
